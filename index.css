@@ -1,0 +1,53 @@
+/* Stiluri generale pentru pagină */
+body {
+    background-color: #f0f0f0;   /* Fundal gri deschis pentru contrast */
+    font-family: Arial, sans-serif;
+    text-align: center;         /* Centrează conținutul */
+    margin: 20px;
+  }
+  
+  /* Stil pentru titlu și instrucțiuni */
+  h1 {
+    color: #333;
+  }
+  p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  
+  /* Containerul care ține cărțile de joc */
+  .game-board {
+    /* Folosim CSS Grid pentru a aranja cărțile într-o grilă */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* 4 coloane pe ecran mare; auto-fit le ajustează automat pe ecrane mici */
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 10px;             /* Spațiu de 10px între cartonașe */
+    justify-content: center;    /* Centrează grila orizontal */
+    margin: 0 auto;             /* Centrează grila în pagină */
+  }
+  
+  /* Stil pentru fiecare carte (imagine) */
+  .game-board img.card {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;          /* În cazul în care imaginile nu sunt pătrate, le încadrăm în pătratul definit */
+    cursor: pointer;            /* Schimbă cursorul la mână când treci peste o carte, indicând că poate fi clicată */
+    border: 2px solid #555;
+    border-radius: 10px;        /* Colțuri rotunjite pentru cartonașe */
+    transition: transform 0.2s; /* Mică animație la hover */
+  }
+  
+  /* Efect la trecerea cu mouse-ul: mărim puțin cartonașul */
+  .game-board img.card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Stil pentru cărțile care au fost potrivite (găsite) */
+  .game-board img.matched {
+    opacity: 0.6;        /* Facem cartonașele găsite puțin transparente */
+    cursor: default;     /* Cursor normal (nu mai arătăm mână pentru clic) */
+    /* Pointer-events none face ca aceste cartonașe să nu mai primească click-uri */
+    pointer-events: none;
+  }
+  
