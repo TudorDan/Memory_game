@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="index4.css">
+</head>
+
+<body>
+    <h1>Memory Game</h1>
+
+    <div class="stats">
+        <label for="themeSelect">Choose Theme:</label>
+        <select id="themeSelect">
+            <option value="fruits">🍎 Fruits</option>
+            <option value="animals">🐶 Animals</option>
+            <option value="space">🚀 Space</option>
+        </select>
+
+        <div id="timer">Time: 0s</div>
+        <div id="moves">Moves: 0</div>
+        <div id="best-score">Best: –</div>
+    </div>
+
+    <div class="game-board" id="gameBoard"></div>
+
+    <div id="win-message">
+        <h2>🎉 You won! 🎉</h2>
+        <p id="final-stats"></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <h2>🏆 Best Scores</h2>
+    <table id="scoreboard">
+        <thead>
+            <tr>
+                <th>Theme</th>
+                <th>Time</th>
+                <th>Moves</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fruits</td>
+                <td id="fruits-time">–</td>
+                <td id="fruits-moves">–</td>
+            </tr>
+            <tr>
+                <td>Animals</td>
+                <td id="animals-time">–</td>
+                <td id="animals-moves">–</td>
+            </tr>
+            <tr>
+                <td>Space</td>
+                <td id="space-time">–</td>
+                <td id="space-moves">–</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="index4.js"></script>
+</body>
+
+</html>
